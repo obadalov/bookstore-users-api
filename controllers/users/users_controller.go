@@ -38,6 +38,7 @@ func GetUser(c *gin.Context) {
 	user, e := services.GetUser(userId)
 	if e != nil {
 		c.JSON(e.Status, e)
+		return
 	}
 	c.JSON(http.StatusCreated, user)
 }
